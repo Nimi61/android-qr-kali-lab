@@ -1,0 +1,38 @@
+<body>
+<h1>Kali Android Mirror</h1>
+<p>Android device detected.</p>
+<button onclick="pairWithKali()">
+    Pair with Kali
+</button>
+<script>
+async function pairWithKali() {
+    try {
+        const response = await fetch("/pair", {
+            method: "POST"
+        });
+
+        const result = await response.json();
+
+        if (result.status === "paired") {
+            alert("Successfully paired with Kali!");
+        }
+    } catch (error) {
+        alert("Could not connect to Kali.");
+    }
+}
+</script><!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kali Android Mirror</title>
+</head>
+<body>
+    <h1>Kali Android Mirror</h1>
+    <p>Android device detected.</p>
+    <button onclick="alert('Pairing request sent to Kali')">
+        Pair with Kali
+    </button>
+</body>
+</html>
+
+
